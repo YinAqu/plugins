@@ -25,7 +25,7 @@ gnomeIconPath = iconLookup('gnome-dictionary')
 def handleQuery(query):
     if query.isTriggered:
         txt = query.string.strip()
-        if txt.endswith('$'):
+        if txt.endswith('`'):
             items = []
             url = urltmpl % (urllib.parse.quote_plus(txt[0:-1]))
             req = urllib.request.Request(url, headers={'User-Agent': ua})
@@ -50,7 +50,7 @@ def handleQuery(query):
             return items
 
         else:
-            return getItem(query.string, "按$翻译", gnomeIconPath) 
+            return getItem(query.string, "按`翻译", gnomeIconPath) 
 
     
 def getItem(text, subtext, iconPath):
