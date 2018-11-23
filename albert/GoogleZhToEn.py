@@ -50,7 +50,7 @@ def handleQuery(query):
             return items
 
         else:
-            return getItem(query.string, "按$翻译", gnomeIconPath) 
+            return getItem(query.string, "按`翻译", gnomeIconPath) 
 
     
 def getItem(text, subtext, iconPath):
